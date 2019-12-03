@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   run_tests:
     docker:
-      - image: circleci/python
+      - image: circleci/python:3.7
     steps:
       - checkout
       - run:
@@ -21,7 +21,7 @@ jobs:
 
   build:
     docker:
-      - image: circleci/python
+      - image: circleci/python:3.7
     steps:
       - checkout
       - run:
@@ -29,7 +29,7 @@ jobs:
           command: pip install --user -r requirements.txt
       - run: 
           name: install pybuilder
-          command: pip install PyBuilder 
+          command: pip install -U --pre PyBuilder 
       - run:
            name: Build Application
            command: PyBuilder run build
