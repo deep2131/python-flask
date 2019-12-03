@@ -25,8 +25,14 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Python Dependencies
+          command: pip install --user -r requirements.txt
+      - run: 
+          name: install pybuilder
+          command: PyBuilder install
+      - run:
            name: Build Application
-           command: pybuilder run build
+           command: PyBuilder run build
       - persist_to_workspace: 
            root: venv
            paths: 
