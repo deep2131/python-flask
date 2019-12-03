@@ -34,6 +34,6 @@ jobs:
            name: Build Application
            command: echo building
       - persist_to_workspace: 
-           root: venv
+           root: file1
            paths: 
              - ./
