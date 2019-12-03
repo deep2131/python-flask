@@ -18,6 +18,12 @@ jobs:
           path: test-reports
       - store_artifacts:
           path: test-reports
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7.4
+    steps:
+      - checkout
       - run:
            name: Build Application
            command: pybuilder run build
