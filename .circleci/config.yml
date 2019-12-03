@@ -18,7 +18,10 @@ jobs:
           path: test-reports
       - store_artifacts:
           path: test-reports
-workflows:
-  build_test:
-    jobs:
-      - run_tests
+      - run:
+           name: Build Application
+           command: pybuilder run build
+      - persist_to_workspace: 
+           root: venv
+           paths: 
+             - ./
