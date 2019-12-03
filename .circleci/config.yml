@@ -32,7 +32,7 @@ jobs:
           command: sudo pip install -U --pre PyBuilder 
       - run:
            name: Build Application
-           command: PyBuilder run build
+           command: PyB run build
       - persist_to_workspace: 
            root: venv
            paths: 
