@@ -7,4 +7,12 @@ jobs:
       - checkout
       - run:
           name: compress code
-          command : tar -cvf artifact.tar python-flask
+          command : |
+               ls -ltr
+               mkdir code
+               
+          
+          
+          
+          
+          tar -cvf artifact.tar python-flask
