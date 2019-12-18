@@ -9,11 +9,8 @@ jobs:
           name: compress code
           command : |
                ls -ltr
-               cd ..
                mkdir code
-               cd code 
-               ls
-             #  cp -r ../python-flask .
+               cp -r * code 
                
                
           
