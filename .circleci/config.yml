@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  compress:
+  build:
     docker:
       - image: circleci/python:3.7
     steps:
