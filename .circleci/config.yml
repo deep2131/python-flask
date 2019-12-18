@@ -14,7 +14,7 @@ jobs:
                cd repo
                cd build
                ls
-               cp -r python-flask .
+               cp -r * .
                
                
                
