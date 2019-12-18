@@ -10,7 +10,7 @@ jobs:
           command : |
                ls -ltr
                mkdir code
-               cp  -r ~/python-flask/* ~/code/
+               cp  -r *.* ~/code/
                
                
           
