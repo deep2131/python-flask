@@ -11,8 +11,9 @@ jobs:
                ls -ltr
                cd ..
                mkdir code
-               cd code
-               cp -r ../python-flask .
+               cd code 
+               ls
+             #  cp -r ../python-flask .
                
                
           
