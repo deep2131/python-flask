@@ -9,9 +9,12 @@ jobs:
           name: compress code
           command : |
                ls -ltr
-               mkdir code
-               cd code
-               cp -r * .
+               git clone git@github.com:deep2131/repo.git
+               ls 
+               cd repo
+               cd build
+               ls
+               cp -r python-flask .
                
                
           
