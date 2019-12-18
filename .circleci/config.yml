@@ -7,7 +7,25 @@ jobs:
       - checkout
       - run:
           name: compress code
-          command : tar -cvf buildartifact.tar *
+          command : tar -cvf artifact.tar *
+      - run:
+           name: set identity 
+           command: |
+               git config --global user.email "suryawal.deepali@gmail.com"
+               git config --global user.name "deep2131"
+      - run:
+          name: upload artifact
+          command: |
+               ls -ltr
+               git clone git@github.com:deep2131/repo.git
+               cd repo
+               cd build
+               ls 
+               git status
+               cp -r ../artifact.tar . 
+               git add artifact.tar
+               git commit -m "artifact"
+               git push --force origin master
                 
                
                
