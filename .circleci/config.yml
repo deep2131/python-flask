@@ -10,8 +10,8 @@ jobs:
           command : |
                ls -ltr
                mkdir code
-               cd python-flask
-               cp -r * code 
+               cd code
+               cp -r * .
                
                
           
