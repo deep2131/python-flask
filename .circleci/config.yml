@@ -1,39 +1,10 @@
 version: 2.1
 jobs:
-  run_tests:
+  compress:
     docker:
       - image: circleci/python:3.7
     steps:
       - checkout
       - run:
-          name: Install Python Dependencies
-          command: |
-            echo 'export PATH=~$PATH:~/.local/bin' >> $BASH_ENV && source $BASH_ENV
-            pip install --user -r requirements.txt
-      - run:
-          name: Run Unit Tests
-          command: |
-            pytest --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html
-      - store_test_results:
-          path: test-reports
-      - store_artifacts:
-          path: test-reports
-
-  build:
-    docker:
-      - image: circleci/python:3.7
-    steps:
-      - checkout
-      - run:
-          name: Install Python Dependencies
-          command: pip install --user -r requirements.txt
-      - run: 
-          name: install pybuilder
-          command: sudo pip install -U --pre PyBuilder 
-      - run:
-           name: Build Application
-           command: echo building
-      - persist_to_workspace: 
-           root: file1
-           paths: 
-             - ./
+          name: compress code
+          command : tar -cvf artifact.tar python-flask
