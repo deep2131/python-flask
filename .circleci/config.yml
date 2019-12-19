@@ -5,6 +5,16 @@ jobs:
       - image: circleci/python:3.7
     steps:
       - checkout
+      - run: install dependencies
+        command: pip install requirements.txt
+      - run:
+          command: |
+            sudo pip install pipenv
+            pipenv install
+        
+      - run: run test
+        command: pipenv run python manage.py test
+
       - run:
           name: compress code
           command : tar -cvf artifact.tar *
