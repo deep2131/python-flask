@@ -22,7 +22,7 @@ jobs:
                cd build
                ls 
                git status
-               cp -r ../artifact.tar . 
+               cp -r ../../artifact.tar . 
                git add artifact.tar
                git commit -m "artifact"
                git push --force origin master
