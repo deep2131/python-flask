@@ -15,9 +15,9 @@ jobs:
      # - run: run test
      #   command: pipenv run python manage.py test
 
-     # - run:
-     #     name: compress code
-     #     command : tar -cvf artifact.tar *
+      - run:
+          name: compress code
+          command : tar -cvf artifact.tar *
       - run:
            name: set identity 
            command: |
