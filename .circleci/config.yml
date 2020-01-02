@@ -1,6 +1,10 @@
 version: 2.1
 jobs:
   build:
+    branches:
+      only:
+        - master
+        - testing
     docker:
       - image: circleci/python:3.7
     steps:
@@ -26,7 +30,7 @@ jobs:
       - run:
           name: upload artifact
           command: |
-               ls -ltr
+               
                git clone git@github.com:deep2131/repo.git
                cd repo
                cd build
@@ -35,7 +39,13 @@ jobs:
                cp -r ../../artifact.tar . 
                git add artifact.tar
                git commit -m "artifact"
-               git push --force origin master
+               if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                 git checkout master
+                 git push --force origin master
+               else 
+                 git checkout testing 
+                 git push --force origin testing 
+               fi
                
                 
         
